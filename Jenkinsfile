@@ -8,6 +8,9 @@ pipeline {
             }
         }
         stage('maven package') {
+             tools {
+                jdk 'jdk8'
+             }
             steps {
                 sh 'mvn package'
             }
