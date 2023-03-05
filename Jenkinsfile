@@ -1,0 +1,23 @@
+pipeline {
+    agent { label 'jenkinsnode' }
+    stages {
+        stage('versioncontrol vcs') {
+            steps {
+                git url: 'https://github.com/sen11111111/game-of-life.git',
+                    branch: 'declarative'
+            }
+        }
+        stage('maven package') {
+            steps {
+                sh 'mvn package'
+            }
+        }
+        stage('post the build') {
+            steps {
+                archiveArtifacts artifacts: '**/target/gameoflife.war',
+                                 onlyIfSuccessful: true
+                junit testResults: '**/surefire-reports/TEST-*.xml'
+            }
+        }
+    }
+}
