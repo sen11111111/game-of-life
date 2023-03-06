@@ -1,6 +1,6 @@
 pipeline {
     agent { label 'jenkinsnode' }
-    
+    triggers { corn ('H/15 * * * *')  }
     stages {
         stage('versioncontrol vcs') {
             steps {
