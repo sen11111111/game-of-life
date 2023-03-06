@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'jenkinsnode' } 
+    parameters {
+        string(name: 'maven_dick', defaultValue: 'package', description: 'maven package?') 
+    }
         stages {
             stage('versioncontrol vcs') {
                 steps {
@@ -12,7 +15,7 @@ pipeline {
                 jdk 'jdk8'
              }
             steps {
-                sh 'mvn package'
+                sh "mvn ${maven_dick}"
             }
         }
         stage('post the build') {
