@@ -1,9 +1,6 @@
 pipeline {
-    agent { label 'jenkinsnode' }
-    triggers {
-        cron('H */6 * * 1-5')
-    }
-        
+    agent { label 'jenkinsnode' } 
+     triggers { pollSCM('H */4 * * 1-5') }
         stages {
             stage('versioncontrol vcs') {
                 steps {
