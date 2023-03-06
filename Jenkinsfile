@@ -1,5 +1,8 @@
 pipeline {
     agent { label 'jenkinsnode' }
+    triggers {
+        cron('H */4 * * 1-5')
+    }
         
         stages {
             stage('versioncontrol vcs') {
