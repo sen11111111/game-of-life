@@ -1,6 +1,5 @@
 pipeline {
     agent { label 'jenkinsnode' } 
-     triggers { pollSCM('H */4 * * 1-5') }
         stages {
             stage('versioncontrol vcs') {
                 steps {
