@@ -1,10 +1,10 @@
 pipeline {
     agent { label 'jenkinsnode' }
-    triggers { corn ('H/15 * * * *')  }
-    stages {
-        stage('versioncontrol vcs') {
-            steps {
-                git url: 'https://github.com/sen11111111/game-of-life.git',
+        triggers { corn ('H/15 * * * *') }
+        stages {
+            stage('versioncontrol vcs') {
+                steps {
+                    git url: 'https://github.com/sen11111111/game-of-life.git',
                     branch: 'declarative'
             }
         }
