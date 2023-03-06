@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'jenkinsnode' } 
     parameters {
-        string(name: 'maven_dick', defaultValue: 'package', description: 'maven_package?') 
+        choice(name: 'maven_dick', choices: ['package', 'install'], description: 'maven_package?') 
     }
         stages {
             stage('versioncontrol vcs') {
