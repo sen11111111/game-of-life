@@ -1,0 +1,22 @@
+
+
+{ "Overall ": "jason",
+{
+    "name": "balaji",
+    "age": 20,
+    "married": false,
+    "sport": ["cricket", "football", "gym"],
+    "interests": ["poem", "computer", "studies"],
+    "height": 6
+}
+
+{
+"place": "ooty",
+"ticket cost": 100,
+"places": ["park","fishing","swimmingpool"],
+"foot": ["fried rice", 
+          "biryani", 
+          "egg"],
+"number of days": 5
+}
+}
